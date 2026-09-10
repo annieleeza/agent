@@ -27,4 +27,38 @@ Rules:
 Output exactly:
 
 SUBJECT: <subject>
+BODY:
+<email body>
+
+User command:
+{command}
+"""
+
+  url = (
+      f"https://generativelanguage.googleapis.com/"
+      f"vlbeta/nodels/{MODEL}:generativeContent"
+  )
+
+  payload ={
+    "contents":[{"parts":[{"text":prompt}]}],
+    "generationConfig":{
+      "temperature":0.7,
+      "maxOutputTokens":800
+    }
+  }
+  req=urlib.request.Request(
+    url,
+    data=json.dumps(payload).encode(),
+    headers={
+      "Content-type":"application/json",
+      "x-goog-api-key":API_KEY
+    },
+    methods="POST"
+  )
+  for attempt in range(4):
+    
+  
+    
+
+
   
