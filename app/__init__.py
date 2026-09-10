@@ -42,7 +42,7 @@ def health():
     return jsonify({
         "status": "ok",
         "service": "Nova AI Agent"
-        )
+    })
 
 #Gmail  AI Agent
 @app.route("/agent",methods=["POST"])
